@@ -29,7 +29,7 @@ public class UrlPersonaliseController {
 
     @CrossOrigin
     @RequestMapping(value = "/urlshortener/save", method = RequestMethod.POST)
-    public ResponseEntity<UrlPersonalise> ajouter(@Valid @RequestBody UrlPersonalise urlPersonalise) throws Exception {
+    public ResponseEntity<UrlPersonalise> ajouter( @RequestBody @Valid UrlPersonalise urlPersonalise) throws Exception {
 
         return new ResponseEntity<>(urlPersonaliseService.enregistreUrlPersonalise(urlPersonalise), HttpStatus.OK);
     }
